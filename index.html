@@ -436,17 +436,24 @@
 
   function showSuccess() {
     var pdfUrl = PDF_BASE_URL + '/' + producto + '.pdf';
-    document.getElementById('downloadLink').href = pdfUrl;
+    var dlLink = document.getElementById('downloadLink');
+    dlLink.href = pdfUrl;
+    dlLink.target = '_blank';
     document.getElementById('formView').style.display = 'none';
     document.getElementById('successView').style.display = 'block';
 
-    var a = document.createElement('a');
-    a.href = pdfUrl;
-    a.download = producto + '.pdf';
-    a.style.display = 'none';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    var inIframe = window.self !== window.top;
+    if (inIframe) {
+      window.open(pdfUrl, '_blank');
+    } else {
+      var a = document.createElement('a');
+      a.href = pdfUrl;
+      a.download = producto + '.pdf';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
   }
 })();
 </script>
