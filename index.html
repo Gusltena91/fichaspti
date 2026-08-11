@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descargar Ficha Técnica | Ultraquimia</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f7fa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      max-width: 480px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #2d6a30 0%, #3AAA35 100%);
+      padding: 2rem 2rem 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .header img {
+      height: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .header p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .product-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.35rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .form-body {
+      padding: 1.75rem 2rem 2rem;
+    }
+
+    .form-body p.intro {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .field {
+      margin-bottom: 1rem;
+    }
+
+    .field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.35rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .field input, .field select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #333;
+      transition: border-color 0.2s;
+      background: #fafafa;
+    }
+
+    .field input:focus, .field select:focus {
+      outline: none;
+      border-color: #3AAA35;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(58,170,53,0.1);
+    }
+
+    .field input::placeholder {
+      color: #aaa;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.85rem;
+      background: #3AAA35;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 0.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-submit:hover {
+      background: #2d8a28;
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+    }
+
+    .btn-submit:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-submit .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .privacy {
+      font-size: 0.75rem;
+      color: #999;
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.4;
+    }
+
+    .success-view {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .success-view .checkmark {
+      width: 64px;
+      height: 64px;
+      background: #e8f5e9;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      font-size: 2rem;
+    }
+
+    .success-view h2 {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-view p {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-download {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      background: #3AAA35;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-download:hover {
+      background: #2d8a28;
+    }
+
+    .error-msg {
+      display: none;
+      background: #fef2f2;
+      color: #dc2626;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      border: 1px solid #fecaca;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem 2rem 1.5rem;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .footer a {
+      font-size: 0.8rem;
+      color: #3AAA35;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 520px) {
+      .form-body { padding: 1.25rem 1.5rem 1.5rem; }
+      .header { padding: 1.5rem 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- FORM VIEW -->
+  <div id="formView">
+    <div class="header">
+      <h1>Ficha Técnica</h1>
+      <p>Completa tus datos para descargar</p>
+      <div class="product-badge" id="productBadge">—</div>
+    </div>
+
+    <div class="form-body">
+      <p class="intro">
+        Ingresa tu información para recibir la ficha técnica del producto.
+        Tu descarga iniciará automáticamente.
+      </p>
+
+      <div class="error-msg" id="errorMsg"></div>
+
+      <form id="leadForm" novalidate>
+        <input type="hidden" id="producto" name="producto" value="">
+
+        <div class="field">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" name="email" placeholder="correo@empresa.com" required>
+        </div>
+
+        <div class="field">
+          <label for="empresa">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa">
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+52 33 1234 5678">
+        </div>
+
+        <div class="field">
+          <label for="estado">Estado / Región</label>
+          <select id="estado" name="estado">
+            <option value="">Selecciona tu estado</option>
+            <option value="Aguascalientes">Aguascalientes</option>
+            <option value="Baja California">Baja California</option>
+            <option value="Baja California Sur">Baja California Sur</option>
+            <option value="Campeche">Campeche</option>
+            <option value="Chiapas">Chiapas</option>
+            <option value="Chihuahua">Chihuahua</option>
+            <option value="Ciudad de México">Ciudad de México</option>
+            <option value="Coahuila">Coahuila</option>
+            <option value="Colima">Colima</option>
+            <option value="Durango">Durango</option>
+            <option value="Guanajuato">Guanajuato</option>
+            <option value="Guerrero">Guerrero</option>
+            <option value="Hidalgo">Hidalgo</option>
+            <option value="Jalisco">Jalisco</option>
+            <option value="Estado de México">Estado de México</option>
+            <option value="Michoacán">Michoacán</option>
+            <option value="Morelos">Morelos</option>
+            <option value="Nayarit">Nayarit</option>
+            <option value="Nuevo León">Nuevo León</option>
+            <option value="Oaxaca">Oaxaca</option>
+            <option value="Puebla">Puebla</option>
+            <option value="Querétaro">Querétaro</option>
+            <option value="Quintana Roo">Quintana Roo</option>
+            <option value="San Luis Potosí">San Luis Potosí</option>
+            <option value="Sinaloa">Sinaloa</option>
+            <option value="Sonora">Sonora</option>
+            <option value="Tabasco">Tabasco</option>
+            <option value="Tamaulipas">Tamaulipas</option>
+            <option value="Tlaxcala">Tlaxcala</option>
+            <option value="Veracruz">Veracruz</option>
+            <option value="Yucatán">Yucatán</option>
+            <option value="Zacatecas">Zacatecas</option>
+            <option value="Otro / Internacional">Otro / Internacional</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btnSubmit">
+          <span id="btnText">Descargar Ficha Técnica</span>
+          <div class="spinner" id="btnSpinner"></div>
+        </button>
+      </form>
+
+      <p class="privacy">
+        Tus datos son confidenciales y no serán compartidos con terceros.
+      </p>
+    </div>
+  </div>
+
+  <!-- SUCCESS VIEW -->
+  <div id="successView" class="success-view">
+    <div class="checkmark">&#10003;</div>
+    <h2>Descarga lista</h2>
+    <p>Tu ficha técnica se está descargando. Si no inició automáticamente, haz clic en el botón.</p>
+    <a id="downloadLink" href="#" class="btn-download" download>Descargar PDF</a>
+  </div>
+
+  <div class="footer">
+    <a href="https://www.ultraquimia.com" target="_blank">ultraquimia.com</a>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ============================================================
+  // CONFIGURATION — UPDATE THESE VALUES
+  // ============================================================
+
+  // 1. Google Apps Script Web App URL (deploy as web app, "anyone" access)
+  var GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+  // 2. Base URL where PDFs are hosted (GitHub Releases)
+  //    Format: https://github.com/{USUARIO}/{REPO}/releases/download/v1
+  //    Replace with your actual GitHub username and repo name
+  var PDF_BASE_URL = 'https://github.com/USUARIO/fichas-tecnicas/releases/download/v1';
+
+  // ============================================================
+
+  var params = new URLSearchParams(window.location.search);
+  var producto = (params.get('p') || params.get('producto') || '')
+    .replace(/%/g, '').replace(/\s+/g, '-').toLowerCase();
+
+  if (producto) {
+    document.getElementById('producto').value = producto;
+    var displayName = producto.replace(/-/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+    document.getElementById('productBadge').textContent = displayName;
+  } else {
+    document.getElementById('productBadge').textContent = 'Producto no especificado';
+  }
+
+  var form = document.getElementById('leadForm');
+  var btnSubmit = document.getElementById('btnSubmit');
+  var btnText = document.getElementById('btnText');
+  var btnSpinner = document.getElementById('btnSpinner');
+  var errorMsg = document.getElementById('errorMsg');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    var nombre = document.getElementById('nombre').value.trim();
+    var email = document.getElementById('email').value.trim();
+
+    if (!nombre || !email) {
+      errorMsg.textContent = 'Por favor completa los campos obligatorios.';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errorMsg.textContent = 'Ingresa un correo electrónico válido.';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    btnSubmit.disabled = true;
+    btnText.style.display = 'none';
+    btnSpinner.style.display = 'block';
+
+    var data = {
+      producto: producto,
+      nombre: nombre,
+      email: email,
+      empresa: document.getElementById('empresa').value.trim(),
+      telefono: document.getElementById('telefono').value.trim(),
+      estado: document.getElementById('estado').value,
+      fecha: new Date().toISOString(),
+      fuente: document.referrer || 'directo'
+    };
+
+    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+      showSuccess();
+      return;
+    }
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function() {
+      showSuccess();
+    })
+    .catch(function() {
+      showSuccess();
+    });
+  });
+
+  function showSuccess() {
+    var pdfUrl = PDF_BASE_URL + '/' + producto + '.pdf';
+    document.getElementById('downloadLink').href = pdfUrl;
+    document.getElementById('formView').style.display = 'none';
+    document.getElementById('successView').style.display = 'block';
+
+    var a = document.createElement('a');
+    a.href = pdfUrl;
+    a.download = producto + '.pdf';
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+})();
+</script>
+
+</body>
+</html>
