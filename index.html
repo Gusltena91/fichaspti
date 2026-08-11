@@ -208,6 +208,25 @@
       background: #2d8a28;
     }
 
+    .download-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn-download .btn-icon {
+      margin-right: 0.4rem;
+    }
+
+    .btn-hds {
+      background: #e67e22;
+    }
+
+    .btn-hds:hover {
+      background: #cf6d17;
+    }
+
     .error-msg {
       display: none;
       background: #fef2f2;
@@ -340,8 +359,15 @@
   <div id="successView" class="success-view">
     <div class="checkmark">&#10003;</div>
     <h2>Descarga lista</h2>
-    <p>Tu ficha técnica se está descargando. Si no inició automáticamente, haz clic en el botón.</p>
-    <a id="downloadLink" href="#" class="btn-download" download>Descargar PDF</a>
+    <p>Tu ficha técnica se está descargando. Si no inició automáticamente, usa los botones.</p>
+    <div class="download-buttons">
+      <a id="downloadLink" href="#" class="btn-download" target="_blank">
+        <span class="btn-icon">&#128196;</span> Ficha Técnica
+      </a>
+      <a id="downloadHDS" href="#" class="btn-download btn-hds" target="_blank" style="display:none;">
+        <span class="btn-icon">&#9888;</span> Hoja de Seguridad
+      </a>
+    </div>
   </div>
 
   <div class="footer">
@@ -436,9 +462,11 @@
 
   function showSuccess() {
     var pdfUrl = PDF_BASE_URL + '/' + producto + '.pdf';
+    var hdsUrl = PDF_BASE_URL + '/hds/' + producto + '.pdf';
+
     var dlLink = document.getElementById('downloadLink');
     dlLink.href = pdfUrl;
-    dlLink.target = '_blank';
+
     document.getElementById('formView').style.display = 'none';
     document.getElementById('successView').style.display = 'block';
 
@@ -454,6 +482,14 @@
       a.click();
       document.body.removeChild(a);
     }
+
+    var hdsLink = document.getElementById('downloadHDS');
+    fetch(hdsUrl, { method: 'HEAD' }).then(function(res) {
+      if (res.ok) {
+        hdsLink.href = hdsUrl;
+        hdsLink.style.display = 'inline-block';
+      }
+    }).catch(function() {});
   }
 })();
 </script>
