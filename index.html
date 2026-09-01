@@ -402,7 +402,9 @@
 
   var params = new URLSearchParams(window.location.search);
   var producto = (params.get('p') || params.get('producto') || '')
-    .replace(/%/g, '').replace(/\s+/g, '-').toLowerCase();
+    .replace(/®/g, '').replace(/%C2%AE/gi, '').replace(/%/g, '')
+    .replace(/\s+/g, '-').toLowerCase()
+    .replace(/-{2,}/g, '-').replace(/^-|-$/g, '');
 
   if (producto) {
     document.getElementById('producto').value = producto;
