@@ -227,6 +227,24 @@
       background: #cf6d17;
     }
 
+    .btn-cerrar {
+      margin-top: 1rem;
+      background: none;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 0.5rem 1.5rem;
+      font-size: 0.85rem;
+      color: #888;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .btn-cerrar:hover {
+      border-color: #999;
+      color: #555;
+    }
+
     .error-msg {
       display: none;
       background: #fef2f2;
@@ -379,10 +397,11 @@
         <span class="btn-icon">&#9888;</span> Hoja de Seguridad
       </a>
     </div>
+    <button id="btnCerrar" class="btn-cerrar" style="display:none;" onclick="window.parent.postMessage('closeLightbox','*')">Cerrar ventana</button>
   </div>
 
   <div class="footer">
-    <a href="https://www.ultraquimia.com" target="_blank">ultraquimia.com</a>
+    <a href="https://www.ptigrupoultraquimia.com" target="_blank">ptigrupoultraquimia.com</a>
   </div>
 </div>
 
@@ -486,6 +505,7 @@
     var inIframe = window.self !== window.top;
     if (inIframe) {
       window.open(pdfUrl, '_blank');
+      document.getElementById('btnCerrar').style.display = 'inline-block';
     } else {
       var a = document.createElement('a');
       a.href = pdfUrl;
