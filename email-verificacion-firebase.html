@@ -1,0 +1,100 @@
+<!--
+  PLANTILLA DE CORREO DE VERIFICACIÓN - Firebase
+
+  Para usarla en Firebase:
+  1. Ve a Firebase Console > Authentication > Templates
+  2. Selecciona "Email address verification"
+  3. Haz clic en el lápiz (editar)
+  4. Activa "Customize action URL" si lo necesitas
+  5. En el campo HTML, pega este contenido
+
+  Variables de Firebase disponibles:
+  %DISPLAY_NAME%  - Nombre del usuario
+  %EMAIL%         - Correo del usuario
+  %LINK%          - Enlace de verificación (OBLIGATORIO)
+  %APP_NAME%      - Nombre de tu app en Firebase
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background-color:#f5f7f5;font-family:'Segoe UI',Arial,Helvetica,sans-serif;">
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f5f7f5;padding:20px 0;">
+<tr>
+<td align="center">
+
+<!-- Container -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);">
+
+  <!-- Header verde -->
+  <tr>
+    <td style="background-color:#3AAA35;padding:28px 32px;text-align:center;">
+      <img src="https://static.wixstatic.com/media/59b8fa_f1cf2e54d8184e0ea9c5ab13eb4b4703~mv2.png" alt="PTI Grupo Ultraquimia" width="180" style="max-width:180px;height:auto;display:inline-block;" />
+    </td>
+  </tr>
+
+  <!-- Contenido -->
+  <tr>
+    <td style="padding:32px 32px 16px;">
+      <h1 style="margin:0 0 8px;font-size:22px;font-weight:700;color:#1a1a1a;">
+        Verifica tu correo electr&#243;nico
+      </h1>
+      <p style="margin:0 0 24px;font-size:15px;color:#666666;line-height:1.6;">
+        Recibimos tu solicitud de registro en la <strong>Biblioteca de Documentos</strong> de PTI Grupo Ultraquimia. Para activar tu cuenta, haz clic en el siguiente bot&#243;n:
+      </p>
+
+      <!-- Botón -->
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center" style="padding:8px 0 28px;">
+            <a href="%LINK%" target="_blank" style="display:inline-block;background-color:#3AAA35;color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;padding:14px 40px;border-radius:8px;letter-spacing:0.3px;">
+              Verificar mi correo
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <p style="margin:0 0 16px;font-size:13px;color:#999999;line-height:1.6;">
+        Si el bot&#243;n no funciona, copia y pega este enlace en tu navegador:
+      </p>
+      <p style="margin:0 0 24px;font-size:12px;color:#3AAA35;word-break:break-all;line-height:1.5;">
+        <a href="%LINK%" style="color:#3AAA35;text-decoration:underline;">%LINK%</a>
+      </p>
+
+      <!-- Divider -->
+      <hr style="border:none;border-top:1px solid #e8f5e7;margin:0 0 20px;" />
+
+      <p style="margin:0 0 4px;font-size:12px;color:#999999;line-height:1.5;">
+        &#128274; Este enlace es v&#225;lido por tiempo limitado y solo puede usarse una vez.
+      </p>
+      <p style="margin:0;font-size:12px;color:#999999;line-height:1.5;">
+        Si t&#250; no solicitaste esta verificaci&#243;n, puedes ignorar este correo.
+      </p>
+    </td>
+  </tr>
+
+  <!-- Footer -->
+  <tr>
+    <td style="background-color:#f9faf9;padding:20px 32px;text-align:center;border-top:1px solid #e8f5e7;">
+      <p style="margin:0 0 6px;font-size:12px;color:#999999;">
+        PTI Grupo Ultraquimia
+      </p>
+      <p style="margin:0;font-size:11px;">
+        <a href="https://www.ptigrupoultraquimia.com" style="color:#3AAA35;text-decoration:none;">ptigrupoultraquimia.com</a>
+      </p>
+    </td>
+  </tr>
+
+</table>
+<!-- /Container -->
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

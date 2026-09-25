@@ -95,6 +95,32 @@ body {
   border-color: var(--green);
 }
 
+.pass-wrapper {
+  position: relative;
+}
+
+.pass-wrapper input {
+  padding-right: 2.8rem;
+}
+
+.pass-toggle {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  padding: 0.2rem;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.pass-toggle:hover { opacity: 1; }
+
 .btn-login {
   display: block;
   width: 100%;
@@ -497,7 +523,10 @@ body {
       </div>
       <div class="login-field">
         <label for="loginPass">Contraseña</label>
-        <input type="password" id="loginPass" placeholder="Contraseña" required minlength="6">
+        <div class="pass-wrapper">
+          <input type="password" id="loginPass" placeholder="Contraseña" required minlength="6">
+          <button type="button" class="pass-toggle" onclick="togglePass(this)" title="Mostrar contraseña">&#128065;</button>
+        </div>
       </div>
       <button type="submit" class="btn-login" id="btnLogin">Iniciar sesión</button>
       <div class="login-links">
@@ -513,11 +542,17 @@ body {
       </div>
       <div class="login-field">
         <label for="regPass">Crear contraseña</label>
-        <input type="password" id="regPass" placeholder="Mínimo 6 caracteres" required minlength="6">
+        <div class="pass-wrapper">
+          <input type="password" id="regPass" placeholder="Mínimo 6 caracteres" required minlength="6">
+          <button type="button" class="pass-toggle" onclick="togglePass(this)" title="Mostrar contraseña">&#128065;</button>
+        </div>
       </div>
       <div class="login-field">
         <label for="regPass2">Confirmar contraseña</label>
-        <input type="password" id="regPass2" placeholder="Repite la contraseña" required minlength="6">
+        <div class="pass-wrapper">
+          <input type="password" id="regPass2" placeholder="Repite la contraseña" required minlength="6">
+          <button type="button" class="pass-toggle" onclick="togglePass(this)" title="Mostrar contraseña">&#128065;</button>
+        </div>
       </div>
       <button type="submit" class="btn-login">Crear cuenta</button>
       <div class="login-links">
@@ -599,6 +634,20 @@ var PDF_BASE = './pdfs';
 
 var catalog = [];
 var activeCategory = 'Todos';
+
+// ===== PASSWORD TOGGLE =====
+function togglePass(btn) {
+  var input = btn.previousElementSibling;
+  if (input.type === 'password') {
+    input.type = 'text';
+    btn.innerHTML = '&#128064;';
+    btn.title = 'Ocultar contraseña';
+  } else {
+    input.type = 'password';
+    btn.innerHTML = '&#128065;';
+    btn.title = 'Mostrar contraseña';
+  }
+}
 
 // ===== AUTH =====
 function getEmailDomain(email) {
