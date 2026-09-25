@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biblioteca PTI Grupo Ultraquimia</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green: #3AAA35;
+  --green-dark: #2E8A2A;
+  --green-light: #e8f5e7;
+  --orange: #FF8C00;
+  --orange-dark: #E07800;
+  --bg: #f5f7f5;
+  --card-bg: #fff;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --border: #e0e0e0;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* LOGIN */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.login-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-card img {
+  max-width: 200px;
+  margin-bottom: 1.5rem;
+}
+
+.login-card h1 {
+  font-size: 1.3rem;
+  color: var(--green);
+  margin-bottom: 0.5rem;
+}
+
+.login-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.login-field {
+  margin-bottom: 0.85rem;
+  text-align: left;
+}
+
+.login-field label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.3rem;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-field input:focus {
+  border-color: var(--green);
+}
+
+.btn-login {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-login:hover { background: var(--green-dark); }
+.btn-login:disabled { background: #aaa; cursor: not-allowed; }
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.login-links a {
+  font-size: 0.78rem;
+  color: var(--green);
+  text-decoration: none;
+}
+
+.login-links a:hover { text-decoration: underline; }
+
+.login-error {
+  color: #d32f2f;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  display: none;
+}
+
+/* HEADER */
+.app-header {
+  background: var(--green);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-header .logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-header .logo-area img {
+  height: 36px;
+}
+
+.app-header .logo-area h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-area img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.user-area span {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.btn-logout {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* MAIN */
+.app-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* STATS */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.stat-card .number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--green);
+}
+
+.stat-card .label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.2rem;
+}
+
+/* SEARCH & FILTERS */
+.toolbar {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.7rem 1rem 0.7rem 2.5rem;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus {
+  border-color: var(--green);
+}
+
+.search-box::before {
+  content: '\1F50D';
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pill {
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.pill:hover { border-color: var(--green); color: var(--green); }
+.pill.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+/* CATEGORY SECTIONS */
+.category-section {
+  margin-bottom: 1.5rem;
+}
+
+.category-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--green-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-title .count {
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+.product-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-info h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-info .badges {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.badge {
+  font-size: 0.6rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-ft { background: var(--green-light); color: var(--green-dark); }
+.badge-hds { background: #fff3e0; color: var(--orange-dark); }
+
+.product-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.btn-dl {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: transform 0.15s, opacity 0.15s;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-dl:hover { transform: scale(1.1); }
+.btn-dl-ft { background: var(--green); }
+.btn-dl-hds { background: var(--orange); }
+
+.btn-dl .tooltip {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  margin-bottom: 4px;
+}
+
+.btn-dl:hover .tooltip { display: block; }
+
+/* NO RESULTS */
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted);
+}
+
+.no-results .icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.no-results p { font-size: 0.9rem; }
+
+/* FOOTER */
+.app-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.app-footer a { color: var(--green); text-decoration: none; }
+
+/* HIDDEN */
+.hidden { display: none !important; }
+
+/* LOADING */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--green-light);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .app-header { padding: 0.6rem 1rem; }
+  .app-header .logo-area h1 { font-size: 0.9rem; }
+  .user-area span { display: none; }
+  .app-main { padding: 1rem 0.75rem; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-card .number { font-size: 1.4rem; }
+  .product-grid { grid-template-columns: 1fr; }
+  .toolbar { flex-direction: column; }
+  .filter-pills { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.25rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loadingView" class="loading">
+  <div class="spinner"></div>
+  <p style="color:var(--text-muted);font-size:0.85rem;">Cargando...</p>
+</div>
+
+<!-- LOGIN -->
+<div id="loginView" class="login-container hidden">
+  <div class="login-card">
+    <img src="https://static.wixstatic.com/media/59b8fa_f1cf2e54d8184e0ea9c5ab13eb4b4703~mv2.png" alt="Ultraquimia" onerror="this.style.display='none'">
+    <h1>Biblioteca de Documentos</h1>
+    <p>Plataforma interna para asesores. Ingresa con tu correo corporativo.</p>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+      <div class="login-field">
+        <label for="loginEmail">Correo corporativo</label>
+        <input type="email" id="loginEmail" placeholder="tu.nombre@ultraquimia.com" required>
+      </div>
+      <div class="login-field">
+        <label for="loginPass">Contraseña</label>
+        <input type="password" id="loginPass" placeholder="Contraseña" required minlength="6">
+      </div>
+      <button type="submit" class="btn-login" id="btnLogin">Iniciar sesión</button>
+      <div class="login-links">
+        <a href="#" onclick="showRegister(); return false;">Crear cuenta</a>
+        <a href="#" onclick="resetPassword(); return false;">Olvidé mi contraseña</a>
+      </div>
+    </form>
+
+    <form id="registerForm" class="hidden" onsubmit="return handleRegister(event)">
+      <div class="login-field">
+        <label for="regEmail">Correo corporativo</label>
+        <input type="email" id="regEmail" placeholder="tu.nombre@ultraquimia.com" required>
+      </div>
+      <div class="login-field">
+        <label for="regPass">Crear contraseña</label>
+        <input type="password" id="regPass" placeholder="Mínimo 6 caracteres" required minlength="6">
+      </div>
+      <div class="login-field">
+        <label for="regPass2">Confirmar contraseña</label>
+        <input type="password" id="regPass2" placeholder="Repite la contraseña" required minlength="6">
+      </div>
+      <button type="submit" class="btn-login">Crear cuenta</button>
+      <div class="login-links">
+        <a href="#" onclick="showLogin(); return false;">Ya tengo cuenta</a>
+      </div>
+    </form>
+
+    <div id="verifyMsg" class="hidden" style="margin-top:1rem;">
+      <p style="color:var(--orange);font-size:0.85rem;line-height:1.5;">&#9993; Te enviamos un correo de verificación. Revisa tu bandeja (y spam) y haz clic en el enlace para activar tu cuenta.</p>
+      <button class="btn-login" style="margin-top:0.75rem;background:var(--orange);" onclick="checkVerification()">Ya verifiqué mi correo</button>
+    </div>
+
+    <p class="login-error" id="loginError"></p>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="appView" class="hidden">
+  <header class="app-header">
+    <div class="logo-area">
+      <img src="https://static.wixstatic.com/media/59b8fa_f1cf2e54d8184e0ea9c5ab13eb4b4703~mv2.png" alt="Logo" onerror="this.style.display='none'">
+      <h1>Biblioteca de Documentos</h1>
+    </div>
+    <div class="user-area">
+      <img id="userPhoto" src="" alt="" onerror="this.style.display='none'">
+      <span id="userName"></span>
+      <button class="btn-logout" onclick="logout()">Salir</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div class="stats-row">
+      <div class="stat-card"><div class="number" id="statTotal">0</div><div class="label">Productos</div></div>
+      <div class="stat-card"><div class="number" id="statFT">0</div><div class="label">Fichas Técnicas</div></div>
+      <div class="stat-card"><div class="number" id="statHDS">0</div><div class="label">Hojas de Seguridad</div></div>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Buscar producto...">
+      </div>
+      <div class="filter-pills" id="filterPills"></div>
+    </div>
+
+    <div id="catalogContainer"></div>
+
+    <div class="no-results hidden" id="noResults">
+      <div class="icon">&#128270;</div>
+      <p>No se encontraron productos con ese filtro.</p>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    &copy; 2025 PTI Grupo Ultraquimia &mdash; <a href="https://www.ptigrupoultraquimia.com" target="_blank">ptigrupoultraquimia.com</a>
+  </footer>
+</div>
+
+<!-- Firebase SDK (compat) -->
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+
+<script>
+// ===== FIREBASE CONFIG =====
+// IMPORTANTE: Reemplaza estos valores con los de tu proyecto Firebase
+var firebaseConfig = {
+  apiKey: "AIzaSyDEnEBXKB4RjEouZkgsloWLzO2BdbubJvI",
+  authDomain: "bibliotecapti-3df62.firebaseapp.com",
+  projectId: "bibliotecapti-3df62",
+  storageBucket: "bibliotecapti-3df62.firebasestorage.app",
+  messagingSenderId: "150691655730",
+  appId: "1:150691655730:web:e6e02748d16e9429750c2b"
+};
+
+firebase.initializeApp(firebaseConfig);
+var auth = firebase.auth();
+
+var ALLOWED_DOMAINS = ['ultraquimia.com', 'imagineagencia.com'];
+var PDF_BASE = './pdfs';
+
+var catalog = [];
+var activeCategory = 'Todos';
+
+// ===== AUTH =====
+function getEmailDomain(email) {
+  return email.split('@')[1].toLowerCase();
+}
+
+function isAllowed(email) {
+  var domain = getEmailDomain(email);
+  return ALLOWED_DOMAINS.indexOf(domain) !== -1;
+}
+
+function showLoginError(msg) {
+  var el = document.getElementById('loginError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function hideLoginError() {
+  document.getElementById('loginError').style.display = 'none';
+}
+
+function showRegister() {
+  hideLoginError();
+  document.getElementById('loginForm').classList.add('hidden');
+  document.getElementById('registerForm').classList.remove('hidden');
+  document.getElementById('verifyMsg').classList.add('hidden');
+}
+
+function showLogin() {
+  hideLoginError();
+  document.getElementById('registerForm').classList.add('hidden');
+  document.getElementById('loginForm').classList.remove('hidden');
+  document.getElementById('verifyMsg').classList.add('hidden');
+}
+
+function handleLogin(e) {
+  e.preventDefault();
+  hideLoginError();
+  var email = document.getElementById('loginEmail').value.trim();
+  var pass = document.getElementById('loginPass').value;
+
+  if (!isAllowed(email)) {
+    showLoginError('Solo se permiten correos @ultraquimia.com e @imagineagencia.com');
+    return false;
+  }
+
+  var btn = document.getElementById('btnLogin');
+  btn.disabled = true;
+  btn.textContent = 'Ingresando...';
+
+  auth.signInWithEmailAndPassword(email, pass).then(function(result) {
+    if (!result.user.emailVerified) {
+      showLoginError('Tu correo aún no está verificado. Revisa tu bandeja de entrada.');
+      auth.signOut();
+    }
+  }).catch(function(err) {
+    var msg = 'Error al iniciar sesión.';
+    if (err.code === 'auth/user-not-found' || err.code === 'auth/invalid-credential') msg = 'Correo o contraseña incorrectos.';
+    if (err.code === 'auth/wrong-password') msg = 'Contraseña incorrecta.';
+    if (err.code === 'auth/too-many-requests') msg = 'Demasiados intentos. Espera unos minutos.';
+    showLoginError(msg);
+  }).finally(function() {
+    btn.disabled = false;
+    btn.textContent = 'Iniciar sesión';
+  });
+  return false;
+}
+
+function handleRegister(e) {
+  e.preventDefault();
+  hideLoginError();
+  var email = document.getElementById('regEmail').value.trim();
+  var pass = document.getElementById('regPass').value;
+  var pass2 = document.getElementById('regPass2').value;
+
+  if (!isAllowed(email)) {
+    showLoginError('Solo se permiten correos @ultraquimia.com e @imagineagencia.com');
+    return false;
+  }
+
+  if (pass !== pass2) {
+    showLoginError('Las contraseñas no coinciden.');
+    return false;
+  }
+
+  auth.createUserWithEmailAndPassword(email, pass).then(function(result) {
+    return result.user.sendEmailVerification();
+  }).then(function() {
+    auth.signOut();
+    document.getElementById('registerForm').classList.add('hidden');
+    document.getElementById('verifyMsg').classList.remove('hidden');
+  }).catch(function(err) {
+    var msg = 'Error al crear la cuenta.';
+    if (err.code === 'auth/email-already-in-use') msg = 'Este correo ya tiene cuenta. Usa "Ya tengo cuenta".';
+    if (err.code === 'auth/weak-password') msg = 'La contraseña debe tener al menos 6 caracteres.';
+    showLoginError(msg);
+  });
+  return false;
+}
+
+function checkVerification() {
+  showLogin();
+  showLoginError('');
+  var info = document.getElementById('loginError');
+  info.style.display = 'block';
+  info.style.color = 'var(--green)';
+  info.textContent = 'Si ya verificaste tu correo, inicia sesión.';
+}
+
+function resetPassword() {
+  var email = document.getElementById('loginEmail').value.trim();
+  if (!email) {
+    showLoginError('Escribe tu correo arriba y luego haz clic en "Olvidé mi contraseña".');
+    return;
+  }
+  if (!isAllowed(email)) {
+    showLoginError('Solo se permiten correos @ultraquimia.com e @imagineagencia.com');
+    return;
+  }
+  auth.sendPasswordResetEmail(email).then(function() {
+    hideLoginError();
+    var info = document.getElementById('loginError');
+    info.style.display = 'block';
+    info.style.color = 'var(--green)';
+    info.textContent = 'Te enviamos un enlace para restablecer tu contraseña.';
+  }).catch(function() {
+    showLoginError('No se pudo enviar el correo. Verifica la dirección.');
+  });
+}
+
+function logout() {
+  auth.signOut();
+}
+
+auth.onAuthStateChanged(function(user) {
+  document.getElementById('loadingView').classList.add('hidden');
+  if (user && user.emailVerified && isAllowed(user.email)) {
+    document.getElementById('loginView').classList.add('hidden');
+    document.getElementById('appView').classList.remove('hidden');
+    document.getElementById('userName').textContent = user.email;
+    document.getElementById('userPhoto').style.display = 'none';
+    loadCatalog();
+  } else {
+    document.getElementById('loginView').classList.remove('hidden');
+    document.getElementById('appView').classList.add('hidden');
+    if (user && !user.emailVerified) {
+      auth.signOut();
+    }
+    if (user && user.emailVerified && !isAllowed(user.email)) {
+      auth.signOut();
+      showLoginError('Acceso restringido a correos @ultraquimia.com e @imagineagencia.com');
+    }
+  }
+});
+
+// ===== CATALOG =====
+function loadCatalog() {
+  fetch('./catalogo.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      catalog = data;
+      buildFilters();
+      renderStats();
+      renderCatalog();
+    })
+    .catch(function() {
+      document.getElementById('catalogContainer').innerHTML = '<p style="color:#d32f2f;text-align:center;">Error al cargar el catálogo.</p>';
+    });
+}
+
+function buildFilters() {
+  var cats = {};
+  catalog.forEach(function(p) { cats[p.category] = (cats[p.category] || 0) + 1; });
+  var sorted = Object.keys(cats).sort();
+  var html = '<button class="pill active" data-cat="Todos">Todos</button>';
+  sorted.forEach(function(c) {
+    html += '<button class="pill" data-cat="' + c + '">' + c + ' (' + cats[c] + ')</button>';
+  });
+  document.getElementById('filterPills').innerHTML = html;
+
+  document.getElementById('filterPills').addEventListener('click', function(e) {
+    var pill = e.target.closest('.pill');
+    if (!pill) return;
+    document.querySelectorAll('.pill').forEach(function(p) { p.classList.remove('active'); });
+    pill.classList.add('active');
+    activeCategory = pill.dataset.cat;
+    renderCatalog();
+  });
+}
+
+function renderStats() {
+  document.getElementById('statTotal').textContent = catalog.length;
+  document.getElementById('statFT').textContent = catalog.filter(function(p) { return p.ft; }).length;
+  document.getElementById('statHDS').textContent = catalog.filter(function(p) { return p.hds; }).length;
+}
+
+function renderCatalog() {
+  var query = document.getElementById('searchInput').value.toLowerCase().trim();
+  var filtered = catalog.filter(function(p) {
+    if (activeCategory !== 'Todos' && p.category !== activeCategory) return false;
+    if (query && p.name.toLowerCase().indexOf(query) === -1 && p.slug.indexOf(query) === -1) return false;
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    document.getElementById('catalogContainer').innerHTML = '';
+    document.getElementById('noResults').classList.remove('hidden');
+    return;
+  }
+
+  document.getElementById('noResults').classList.add('hidden');
+
+  var byCategory = {};
+  filtered.forEach(function(p) {
+    if (!byCategory[p.category]) byCategory[p.category] = [];
+    byCategory[p.category].push(p);
+  });
+
+  var catOrder = Object.keys(byCategory).sort();
+  var html = '';
+
+  catOrder.forEach(function(cat) {
+    var products = byCategory[cat];
+    html += '<div class="category-section">';
+    html += '<div class="category-title">' + cat + ' <span class="count">' + products.length + '</span></div>';
+    html += '<div class="product-grid">';
+
+    products.forEach(function(p) {
+      html += '<div class="product-card">';
+      html += '<div class="product-info">';
+      html += '<h3 title="' + p.name + '">' + p.name + '</h3>';
+      html += '<div class="badges">';
+      if (p.ft) html += '<span class="badge badge-ft">FT</span>';
+      if (p.hds) html += '<span class="badge badge-hds">HDS</span>';
+      html += '</div></div>';
+      html += '<div class="product-actions">';
+      if (p.ft) {
+        html += '<a class="btn-dl btn-dl-ft" href="' + PDF_BASE + '/' + p.slug + '.pdf" target="_blank" title="Ficha Técnica">&#128196;</a>';
+      }
+      if (p.hds) {
+        html += '<a class="btn-dl btn-dl-hds" href="' + PDF_BASE + '/hds/' + p.slug + '.pdf" target="_blank" title="Hoja de Seguridad">&#9888;&#65039;</a>';
+      }
+      html += '</div></div>';
+    });
+
+    html += '</div></div>';
+  });
+
+  document.getElementById('catalogContainer').innerHTML = html;
+}
+
+// Search input — reset category to "Todos" when typing
+document.getElementById('searchInput').addEventListener('input', function() {
+  if (this.value.trim()) {
+    activeCategory = 'Todos';
+    document.querySelectorAll('.pill').forEach(function(p) { p.classList.remove('active'); });
+    var todosBtn = document.querySelector('.pill[data-cat="Todos"]');
+    if (todosBtn) todosBtn.classList.add('active');
+  }
+  renderCatalog();
+});
+</script>
+
+</body>
+</html>

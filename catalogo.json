@@ -1,0 +1,1031 @@
+[
+  {
+    "slug": "agayafinn",
+    "name": "Agayafinn",
+    "category": "Otros",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "agricu-5",
+    "name": "Agricu 5",
+    "category": "Nutrición",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "agrimy-cu-100",
+    "name": "AGRIMY CU® 100",
+    "category": "Bactericidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "agrimy-cu-500",
+    "name": "AGRIMY CU® 500",
+    "category": "Bactericidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "aminofit-kborca",
+    "name": "AMINOFIT® KBorCa",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "aminofit-xtra",
+    "name": "AMINOFIT® XTRA",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "anibac-580",
+    "name": "ANIBAC® 580",
+    "category": "Bactericidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "anibac-citrico",
+    "name": "ANIBAC® CITRICO",
+    "category": "Bactericidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "anibac-plus",
+    "name": "ANIBAC® PLUS",
+    "category": "Bactericidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "anibac-plus-v2",
+    "name": "ANIBAC® PLUS V2",
+    "category": "Bactericidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "aquackeck",
+    "name": "Aquackeck",
+    "category": "Otros",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "ataque-sulfoamex",
+    "name": "Ataque Sulfoamex",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "bio-bacter",
+    "name": "Bio Bacter",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "bio-die",
+    "name": "BIO-DIE®",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "bio-die-jardineria",
+    "name": "Bio Die Jardineria",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "bio-punch",
+    "name": "Bio Punch®",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "bio-shot-jardineria",
+    "name": "Bio Shot Jardineria",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "bio-shot-usa",
+    "name": "Bio Shot Usa",
+    "category": "Exportación",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "bio-stick",
+    "name": "BIO-Stick®",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "bio-urban-urbano",
+    "name": "Bio Urban Urbano",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "biocinnamon-usa",
+    "name": "Biocinnamon Usa",
+    "category": "Exportación",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "brasuma",
+    "name": "Brasuma",
+    "category": "Nutrición",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "citroil",
+    "name": "CITROIL®",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "contronat",
+    "name": "ControNat",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "coraza-720-s",
+    "name": "CORAZA® 720 S",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "cu-back",
+    "name": "CU-BACK®",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "curistin",
+    "name": "CURISTIN®",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "eco-urban-urbano",
+    "name": "Eco Urban Urbano",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "fanato-lxx",
+    "name": "FANATO LXX®",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "isaria-javanica",
+    "name": "Isaria Javanica",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "mexagral100",
+    "name": "Mexagral100",
+    "category": "Nutrición",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "molus-die",
+    "name": "MOLUS® DIE",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "molus-die-guatemala",
+    "name": "Molus Die Guatemala",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "natomaxx",
+    "name": "Natomaxx",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "natuargem-supper",
+    "name": "Natuargem Supper",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "naturacide-gamma-jardineria",
+    "name": "Naturacide Gamma Jardineria",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "naturacide-mega-jardineria",
+    "name": "Naturacide Mega Jardineria",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "naturacide-neem-ce-80-jardineria",
+    "name": "Naturacide Neem Ce 80 Jardineria",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "naturacide-neemacar-jardineria",
+    "name": "Naturacide Neemacar Jardineria",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "naturacide-omega-jardineria",
+    "name": "Naturacide Omega Jardineria",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "natural-king",
+    "name": "NATURAL KING",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-bio",
+    "name": "NUTRIPRO® BIO",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "nutripro-bio-quitina",
+    "name": "NUTRIPRO® BIO QUITINA",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-brassinal",
+    "name": "NUTRIPRO® BRASSINAL",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-cab",
+    "name": "NUTRIPRO® CaB",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-energy",
+    "name": "NUTRIPRO® ENERGY",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-forte",
+    "name": "NUTRIPRO® FORTE",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-kmg",
+    "name": "NUTRIPRO® KMg",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-mag",
+    "name": "NUTRIPRO® MAG",
+    "category": "Bioestimulantes",
+    "ft": false,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-mix",
+    "name": "NUTRIPRO® MIX",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-trihormonal",
+    "name": "NUTRIPRO® TRIHORMONAL",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "nutripro-xtra-alga",
+    "name": "NUTRIPRO® XTRA ALGA",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "pro-activ",
+    "name": "Pro Activ",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "pro-canela",
+    "name": "Pro Canela",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "probac-bs",
+    "name": "PROBAC BS",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "probac-bs-calidad",
+    "name": "Probac Bs Calidad",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-alfa",
+    "name": "PROGRANIC® ALFA",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-cimax",
+    "name": "Progranic Cimax",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-cinnacar",
+    "name": "PROGRANIC® CINNACAR",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-cinnacar-jardineria",
+    "name": "Progranic Cinnacar Jardineria",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-cinnacar-urbano",
+    "name": "Progranic Cinnacar Urbano",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-cinnacar-usa",
+    "name": "Progranic Cinnacar Usa",
+    "category": "Exportación",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-citrus",
+    "name": "PROGRANIC® CITRUS",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-delphinus",
+    "name": "PROGRANIC® DELPHINUS",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-gamma",
+    "name": "PROGRANIC® GAMMA",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-gamma-jardineria",
+    "name": "Progranic Gamma Jardineria",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-insect-out",
+    "name": "PROGRANIC® INSECT-OUT",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-insect-out-jardineria",
+    "name": "Progranic Insect Out Jardineria",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-mega",
+    "name": "PROGRANIC® MEGA",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-mega-jardineria",
+    "name": "Progranic Mega Jardineria",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-mix-top",
+    "name": "PROGRANIC® MIX-TOP",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-neemacar-ce",
+    "name": "PROGRANIC® NEEMACAR CE",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-neemacar-ce-jardineria",
+    "name": "Progranic Neemacar Ce Jardineria",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-neemacar-ce-urbano",
+    "name": "Progranic Neemacar Ce Urbano",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-nimicide-80",
+    "name": "PROGRANIC® NIMICIDE 80",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-nimicide-80-jardineria",
+    "name": "Progranic Nimicide 80 Jardineria",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-nimicide-80-urbano",
+    "name": "Progranic Nimicide 80 Urbano",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-oil-premium",
+    "name": "PROGRANIC® OIL PREMIUM",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-omega",
+    "name": "PROGRANIC® OMEGA",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-omega-jardineria",
+    "name": "Progranic Omega Jardineria",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progranic-piretro",
+    "name": "PROGRANIC® PIRETRO",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progranic-sigma",
+    "name": "PROGRANIC® SIGMA",
+    "category": "Insecticidas",
+    "ft": false,
+    "hds": true
+  },
+  {
+    "slug": "progreen-jardineria",
+    "name": "Progreen Jardineria",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progreen-nema-die",
+    "name": "PROGREEN® NEMA-DIE",
+    "category": "Insecticidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progrow-20npk",
+    "name": "PROGROW® 20 NPK",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progrow-500-f",
+    "name": "Progrow 500 F",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "progrow-activador",
+    "name": "PROGROW® ACTIVADOR",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progrow-enraizador",
+    "name": "PROGROW® ENRAIZADOR",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progrow-p37",
+    "name": "PROGROW® P37",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "progrow-zn-especial",
+    "name": "PROGROW® ZN ESPECIAL",
+    "category": "Bioestimulantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prolux",
+    "name": "PROLUX®",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prolux-adherente",
+    "name": "PROLUX® ADHERENTE",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prolux-adherente-eco",
+    "name": "PROLUX® ADHERENTE ECO",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prolux-plus-ph",
+    "name": "PROLUX® PLUS PH",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prolux-ultra",
+    "name": "PROLUX® ULTRA",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prolux-vulcano",
+    "name": "Prolux Vulcano",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "promyl",
+    "name": "PROMYL®",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prontius",
+    "name": "PRONTIUS®",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prontius-500-sc",
+    "name": "PRONTIUS® 500 SC",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prontius-achc",
+    "name": "Prontius Achc",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prontius-ca",
+    "name": "Prontius Ca",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prontius-io",
+    "name": "Prontius Io",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prontius-mg",
+    "name": "Prontius Mg",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prontius-ni",
+    "name": "Prontius Ni",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prowet-bio-adher",
+    "name": "PROWET® BIO ADHER",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prowet-bio-ph",
+    "name": "PROWET® BIO-pH",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prowet-biodyna",
+    "name": "PROWET® Biodyna",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prowet-cl",
+    "name": "PROWET® CL",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prowet-ovi-die",
+    "name": "PROWET® OVI-DIE",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prowet-ovi-die-coadyuvante",
+    "name": "Prowet Ovi Die Coadyuvante",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prowet-pine-oil",
+    "name": "PROWET® PINE OIL",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prowet-sa",
+    "name": "PROWET® SA",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "prozycar-50",
+    "name": "Prozycar 50",
+    "category": "Sin categoría",
+    "ft": false,
+    "hds": true
+  },
+  {
+    "slug": "prozycar-50-ph",
+    "name": "PROZYCAR® 50 PH",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "prozycar-500-f",
+    "name": "PROZYCAR® 500 F",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "ptistrobin",
+    "name": "Ptistrobin",
+    "category": "Sin categoría",
+    "ft": false,
+    "hds": true
+  },
+  {
+    "slug": "ptistrobin-25-ce",
+    "name": "PTIStrobin 25 CE",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "pull-75",
+    "name": "Pull 75",
+    "category": "Sin categoría",
+    "ft": false,
+    "hds": true
+  },
+  {
+    "slug": "pull-75-wg",
+    "name": "Pull 75 Wg",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "pyraclostrobin-250",
+    "name": "Pyraclostrobin 250",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "robust-r",
+    "name": "ROBUST R®",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "sigatoker",
+    "name": "Sigatoker",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "spectrum-bea-b",
+    "name": "SPECTRUM® BEA B",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "spectrum-bea-b-urbano",
+    "name": "Spectrum Bea B Urbano",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "spectrum-meta",
+    "name": "Spectrum Meta",
+    "category": "Sin categoría",
+    "ft": false,
+    "hds": true
+  },
+  {
+    "slug": "spectrum-meta-a",
+    "name": "SPECTRUM® META A",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "spectrum-meta-a-urbano",
+    "name": "Spectrum Meta A Urbano",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "spectrum-mico-radix",
+    "name": "SPECTRUM® MICO RADIX",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "spectrum-pae-l",
+    "name": "SPECTRUM® PAE L",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "spectrum-trico-bio",
+    "name": "SPECTRUM® TRICO-BIO",
+    "category": "Biológicos",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "star-acar-urbano",
+    "name": "Star Acar Urbano",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "star-neem-ce80-urbano",
+    "name": "Star Neem Ce80 Urbano",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "star-neemacar-ce-urbano",
+    "name": "Star Neemacar Ce Urbano",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "star-organico-urbano",
+    "name": "Star Organico Urbano",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "stick-potasico",
+    "name": "Stick Potasico",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "terra-5-cu",
+    "name": "TERRA 5% CU",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "thiophanate-methyl",
+    "name": "Thiophanate Methyl",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "tiofanato",
+    "name": "Tiofanato",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "tural",
+    "name": "TURAL",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "tural-coadyuvante",
+    "name": "Tural Coadyuvante",
+    "category": "Coadyuvantes",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "ultrabin",
+    "name": "Ultrabin",
+    "category": "Sin categoría",
+    "ft": false,
+    "hds": true
+  },
+  {
+    "slug": "ultrabin-25-sc",
+    "name": "ULTRABIN 25 SC",
+    "category": "Nutrición",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "ultralite-bea-b-urbano",
+    "name": "Ultralite Bea B Urbano",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "ultralite-meta-a-urbano",
+    "name": "Ultralite Meta A Urbano",
+    "category": "Jardinería",
+    "ft": true,
+    "hds": false
+  },
+  {
+    "slug": "ultralux-n",
+    "name": "ULTRALUX N",
+    "category": "Nutrición",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "ultralux-s",
+    "name": "ULTRALUX S",
+    "category": "Nutrición",
+    "ft": true,
+    "hds": true
+  },
+  {
+    "slug": "ultrazoxy",
+    "name": "Ultrazoxy",
+    "category": "Fungicidas",
+    "ft": true,
+    "hds": false
+  }
+]
